@@ -1,6 +1,8 @@
 import os
-# You can add folders or add to individual file types.
-# If adding new folder, add list of file extensions
+# If adding new folder 
+#    -add folder name to FOLDERS
+#    -add the folder name as a key to FILE_TYPES and add list of file extensions to the key
+#    -Leave last index of FOLDERS as the 'Other' folder for file extensions that aren't specified elsewhere.
 
 FOLDERS = ['Audacity', 'Audio', 'Code', 'Documents', 'Images', 'Installers', 'PDFs', 'Videos', 'Zipped', 'Other']
 FILE_TYPES = {
@@ -21,7 +23,7 @@ def move_file(file, extension, original_file_path, path):
         for key in FILE_TYPES:
             if extension in FILE_TYPES[key]:
                 os.replace(original_file_path, f'{path}/{key}/{file}')
-        os.replace(original_file_path, f'{path}/{FOLDERS[-1]}/{file}')
+        os.replace(original_file_path, f'{path}/{FOLDERS[-1]}/{file}')        # File extension not found in FILE_TYPES - sends to 'Other'
     except:
         pass
 
@@ -31,8 +33,8 @@ def check_file_existence(file, file_path, path):
     new_path = file_path
     new_file = file
 
-    for each in FOLDERS:    # If folder doesn't exist, create folder
-        if not os.path.isdir(f'{path}/{each}'): os.mkdir(f'{path}/{each}')
+    for each in FOLDERS:    
+        if not os.path.isdir(f'{path}/{each}'): os.mkdir(f'{path}/{each}')    # If folder in FOLDERS doesn't exist, create folder         
 
     for each in directory:
         if os.path.exists(f'{path}/{each}/{file}'):
@@ -40,6 +42,6 @@ def check_file_existence(file, file_path, path):
             new_path = f'{path}/{new_file}'
 
             os.rename(file_path, new_path)
-            (new_file, new_path) = check_file_existence(new_file, new_path, path)
+            (new_file, new_path) = check_file_existence(new_file, new_path, path)  # Recursion UNTIL unique file name created
 
     return new_file, new_path
