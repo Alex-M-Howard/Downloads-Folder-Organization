@@ -85,6 +85,7 @@ These instructions are only for windows!
 <br />
 
 **14)** Under the Advanced settings, tick 'Repeat task every' and select whatever interval you want, and for a duration of: 'Indefinitely'. Click OK!
+
 ![2022-06-05 10_07_05-Edit Trigger](https://user-images.githubusercontent.com/99138808/172061964-35d3bfa0-2191-46ea-ac46-bde039fdf74b.png)
 
 <br />
