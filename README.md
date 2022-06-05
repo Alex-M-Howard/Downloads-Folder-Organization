@@ -1,6 +1,17 @@
 # Downloads-Folder-Organization
 Python can automatically sort files inside your downloads folder so you can spend less time searching/organizing and get back to what is important! Browsing the web and downloading more stuff!
 
+**Have you ever had this:**![2022-06-05 13_26_16-Downloads](https://user-images.githubusercontent.com/99138808/172062729-d9eaf301-dd9a-464d-bbae-6ab894d3525e.png)
+
+
+
+
+**NOW YOU CAN HAVE THIS:**
+![2022-06-05 13_27_03-Downloads](https://user-images.githubusercontent.com/99138808/172062742-3efc68a0-9985-4440-b3cd-fa4272d551c9.png)
+
+
+
+
 These instructions are only for windows!
 
 **1)** Change the drive letter and username to match yours in main.py
